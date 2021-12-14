@@ -11,14 +11,7 @@ import { HeaderLayout } from "../components/templates/HeadeLayout";
 export const Router: VFC = memo(() => {
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <HeaderLayout>
-            <Login />
-          </HeaderLayout>
-        }
-      />
+      <Route path="/" element={<Login />} />
       <Route
         path="/user_management"
         element={
