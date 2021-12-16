@@ -5,7 +5,7 @@ import { Login } from "../components/pages/Login";
 import { UserManagement } from "../components/pages/UserManagement";
 import { Home } from "../components/pages/Home";
 import { Setting } from "../components/pages/Setting";
-import { Page404 } from "../components/pages/Page404";
+// import { Page404 } from "../components/pages/Page404";
 import { HeaderLayout } from "../components/templates/HeadeLayout";
 
 export const Router: VFC = memo(() => {
@@ -13,7 +13,7 @@ export const Router: VFC = memo(() => {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route
-        path="/user_management"
+        path="/home/user_management"
         element={
           <HeaderLayout>
             <UserManagement />
@@ -21,7 +21,7 @@ export const Router: VFC = memo(() => {
         }
       />
       <Route
-        path="/setting"
+        path="/home/setting"
         element={
           <HeaderLayout>
             <Setting />
@@ -36,14 +36,14 @@ export const Router: VFC = memo(() => {
           </HeaderLayout>
         }
       />
-      <Route
+      {/* <Route
         path="*"
         element={
           <HeaderLayout>
             <Page404 />
           </HeaderLayout>
         }
-      />
+      /> */}
     </Routes>
   );
 });
