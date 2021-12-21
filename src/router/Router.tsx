@@ -7,36 +7,38 @@ import { Home } from "../components/pages/Home";
 import { Setting } from "../components/pages/Setting";
 // import { Page404 } from "../components/pages/Page404";
 import { HeaderLayout } from "../components/templates/HeadeLayout";
+import { LoginUserProvider } from "../providers/LoginUserProvider";
 
 export const Router: VFC = memo(() => {
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route
-        path="/home/user_management"
-        element={
-          <HeaderLayout>
-            <UserManagement />
-          </HeaderLayout>
-        }
-      />
-      <Route
-        path="/home/setting"
-        element={
-          <HeaderLayout>
-            <Setting />
-          </HeaderLayout>
-        }
-      />
-      <Route
-        path="/home"
-        element={
-          <HeaderLayout>
-            <Home />
-          </HeaderLayout>
-        }
-      />
-      {/* <Route
+    <LoginUserProvider>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route
+          path="/home/user_management"
+          element={
+            <HeaderLayout>
+              <UserManagement />
+            </HeaderLayout>
+          }
+        />
+        <Route
+          path="/home/setting"
+          element={
+            <HeaderLayout>
+              <Setting />
+            </HeaderLayout>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <HeaderLayout>
+              <Home />
+            </HeaderLayout>
+          }
+        />
+        {/* <Route
         path="*"
         element={
           <HeaderLayout>
@@ -44,6 +46,7 @@ export const Router: VFC = memo(() => {
           </HeaderLayout>
         }
       /> */}
-    </Routes>
+      </Routes>
+    </LoginUserProvider>
   );
 });
